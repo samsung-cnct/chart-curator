@@ -1,12 +1,14 @@
-name: sample-chart
+name: curator-chart
 version: ${CHART_VER}-${CHART_REL}
-description: Sample chart template for registry
+description: Curator chart for managing elasticsearch indices
 keywords:
-- keyword one
-- keyword two
-home: https://github.com/samsung-cnct/template-chart
+- logging
+- curator
+- elasticsearch
+- kraken
+home: https://github.com/samsung-cnct/chart-curator
 sources:
-- /source urls go here/
+- https://github.com/samsung-cnct/chart-curator
 maintainers:
 - name: Samsung CNCT
   email: samsung.cloudnative@gmail.com
