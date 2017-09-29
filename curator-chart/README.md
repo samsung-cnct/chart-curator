@@ -2,18 +2,7 @@
 
 ## Installation
 
-Install this in your Kubernetes cluster with [Helm](https://github.com/kubernetes/helm):
-
-```
-helm repo add cnct http://atlas.cnct.io
-```
-```
-helm install cnct/curator
-```
-
-Get Helm [here](https://github.com/kubernetes/helm/blob/master/docs/install.md).
-
-Or add the following to your [Kraken](https://github.com/samsung-cnct/kraken-lib) configuration template:
+Add the following to your [Kraken](https://github.com/samsung-cnct/kraken-lib) configuration template:
 ```
 helmConfigs:
   - &defaultHelm

@@ -6,10 +6,6 @@ Elasticsearch Curator helps you curate, or manage, your Elasticsearch indices by
 
 Our Chart deletes all logstash-prefixed indices older than 14 days.
 
-## Installation
-`$ helm repo add cnct http://atlas.cnct.io`     
-`$ helm install -f yourvalues.yaml --name cnct/curator`
-
 [Curator github](https://github.com/elastic/curator)    
 [Curator Reference Documentation](https://www.elastic.co/guide/en/elasticsearch/client/curator/current/index.html)            
 [Discuss Curator](https://discuss.elastic.co/search?q=curator)
