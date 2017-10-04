@@ -15,8 +15,8 @@ helmConfigs:
     charts:
       -
         name: curator
-        repo: atlas
-        chart: curator
+        repo: quay.io
+        chart: samsung_cnct/curator
         version: 0.1.0
         namespace: kube-logging
 ```

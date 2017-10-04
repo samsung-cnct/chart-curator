@@ -1,4 +1,4 @@
-name: curator-chart
+name: curator
 version: ${CHART_VER}-${CHART_REL}
 description: Curator chart for managing elasticsearch indices
 keywords:
@@ -12,5 +12,5 @@ sources:
 maintainers:
 - name: Samsung CNCT
   email: samsung.cloudnative@gmail.com
-icon: /optional icon url/
+icon: https://github.com/samsung-cnct/solas/docs/images/samsung-logo.svg
 engine: gotpl
