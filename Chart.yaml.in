@@ -6,7 +6,6 @@ keywords:
 - curator
 - elasticsearch
 - kraken
-- indices
 home: https://github.com/samsung-cnct/chart-curator
 sources:
 - https://github.com/samsung-cnct/chart-curator
