@@ -6,6 +6,13 @@ Elasticsearch Curator helps you curate, or manage, your Elasticsearch indices by
 
 Our Chart deletes all logstash-prefixed indices older than 14 days.
 
+## How to install on running Kubernetes cluster with `helm`
+Install Helm and the Helm registry plugin with [these](https://github.com/app-registry/appr-helm-plugin/blob/master/README.md#install-the-helm-registry-plugin) instructions.
+
+```
+helm registry install quay.io/samsung_cnct/chart-curator
+```
+
 [Curator github](https://github.com/elastic/curator)    
 [Curator Reference Documentation](https://www.elastic.co/guide/en/elasticsearch/client/curator/current/index.html)            
 [Discuss Curator](https://discuss.elastic.co/search?q=curator)
