@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{.Values.name}}
+  name: curator-config
 data:
   action_file.yml: |-
     ---
