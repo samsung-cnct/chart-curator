@@ -1,5 +1,7 @@
 # Chart for Curator
 
+[![pipeline status](https://git.cnct.io/common-tools/samsung-cnct_chart-curator/badges/master/pipeline.svg)](https://git.cnct.io/common-tools/samsung-cnct_chart-curator/commits/master)
+
 Elasticsearch Curator helps you curate, or manage, your Elasticsearch indices by:
 * Obtaining the full list of indices from the cluster, as the *actionable list*
 * Iterating through a list of user-defined [filters](https://www.elastic.co/guide/en/elasticsearch/client/curator/current/filters.html) to progressively remove indices from the *actionable* list as needed.
