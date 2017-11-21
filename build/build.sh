@@ -13,4 +13,4 @@ else
 fi
 
 CHART_VER=${CHART_VER:-0.0.1} CHART_REL=${CHART_REL:-0} \
-    envsubst < build/Chart.yaml.in > ${chart_name}/Chart.yaml
+    envsubst < build/Chart.yaml.in > ${CHART_NAME}/Chart.yaml
