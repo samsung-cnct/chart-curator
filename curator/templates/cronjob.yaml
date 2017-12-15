@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: {{.Values.name}}
-            image: {{.Values.image}}
+            image: {{.Values.image}}:{{.Values.tag}}
             args: ["--config", "/etc/config/config.yml", "/etc/config/action_file.yml"]
             volumeMounts:
               - name: config-volume
