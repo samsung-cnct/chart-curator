@@ -17,8 +17,7 @@ helmConfigs:
         name: curator
         repo: quay.io
         chart: samsung_cnct/curator
-        version: 0.1.0
-        namespace: kube-logging
+        version: 0.1.0  # visit https://quay.io/application/samsung_cnct/curator for most recent stable version
 ```
 
 Get [Kraken](https://github.com/samsung-cnct/kraken) to help you deploy a Kubernetes cluster.
