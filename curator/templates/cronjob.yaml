@@ -1,9 +1,7 @@
-{{- if le .Capabilities.KubeVersion.Major "1" }}
-{{- if le .Capabilities.KubeVersion.Minor "7" }}
+{{- if and (le .Capabilities.KubeVersion.Major "1") (le .Capabilities.KubeVersion.Minor "7") }}
 apiVersion: "batch/v2alpha1"
 {{- else }}
 apiVersion: "batch/v1beta1"
-{{- end }}
 {{- end }}
 kind: CronJob
 metadata:
