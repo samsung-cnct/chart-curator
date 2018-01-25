@@ -1,4 +1,4 @@
-{{- if ge .Capabilities.KubeVersion.Minor "8" and if ge .Capabilities.KubeVersion.Major "1" }}
+{{- if ge .Capabilities.KubeVersion.Minor "8" and ge .Capabilities.KubeVersion.Major "1" }}
 apiVersion: "batch/v2alpha1"
 {{- else }}
 apiVersion: "batch/v1beta1"
