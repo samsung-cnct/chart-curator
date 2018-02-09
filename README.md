@@ -18,3 +18,16 @@ helm registry install quay.io/samsung_cnct/curator
 [Curator github](https://github.com/elastic/curator)    
 [Curator Reference Documentation](https://www.elastic.co/guide/en/elasticsearch/client/curator/current/index.html)            
 [Discuss Curator](https://discuss.elastic.co/search?q=curator)
+
+## Configuration
+
+The following tables lists the configurable parameters of the Curator chart and their default values.
+
+| Parameter                | Description                                     | Default                                 |
+| ------------------------ | ----------------------------------------------- | --------------------------------------- |
+| `name`                   | Name of the chart                               | `curator`                               |
+| `image.name`             | FQDN repository/image name                      | `quay.io/samsung_cnct/curator-container`|
+| `image.tag`              | Image tag                                       | `latest`                                |
+| `retention.pattern`      | Prefix pattern of index to retain               | `logstash-`                             |
+| `retention.unit`         | Retention period unit                           | `days`                                  |
+| `retention.count`        | Retention period                                | `14`                                    |
