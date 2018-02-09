@@ -11,7 +11,7 @@ data:
       1:
         action: delete_indices
         description: >-
-          Delete indices older than 14 days (based on index name), for logstash-
+          Delete indices older than {{.Values.retention.count}} {{.Values.retention.unit}} (based on index name), for {{.Values.retention.pattern}}
           prefixed indices. Ignore the error if the filter does not result in an
           actionable list of indices (ignore_empty_list) and exit cleanly.
         options:
@@ -21,14 +21,14 @@ data:
         filters:
         - filtertype: pattern
           kind: prefix
-          value: logstash-
+          value: {{.Values.retention.pattern}}
           exclude: False
         - filtertype: age
           source: name
           timestring: '%Y.%m.%d'
           direction: older
-          unit: days
-          unit_count: 14
+          unit: {{.Values.retention.unit}}
+          unit_count: {{.Values.retention.count}}
           field:
           stats_result:
           epoch:

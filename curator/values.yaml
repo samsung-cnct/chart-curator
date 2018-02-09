@@ -6,3 +6,7 @@
 image: quay.io/samsung_cnct/curator-container
 name: curator
 schedule: "30 3 * * *"
+retention:
+  pattern: logstash-
+  unit: days
+  count: 14
