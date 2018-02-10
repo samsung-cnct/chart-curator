@@ -28,6 +28,7 @@ The following tables lists the configurable parameters of the Curator chart and 
 | `name`                   | Name of the chart                               | `curator`                               |
 | `image.name`             | FQDN repository/image name                      | `quay.io/samsung_cnct/curator-container`|
 | `image.tag`              | Image tag                                       | `latest`                                |
+| `schedule`               | The cron schedule                               | `30 3 * * *`                            |
 | `retention.pattern`      | Prefix pattern of index to retain               | `logstash-`                             |
 | `retention.unit`         | Retention period unit                           | `days`                                  |
 | `retention.count`        | Retention period                                | `14`                                    |
