@@ -10,9 +10,6 @@ image:
 schedule: "30 3 * * *"
 
 retention:
-  unit_count: 14
-  unit: days
-  pattern: "logstash-"
   options:
     timeout_override: null
     disable_action: False

@@ -11,8 +11,8 @@ data:
       1:
         action: delete_indices
         description: >-
-          Delete indices older than {{.Values.retention.unit_count}} {{.Values.retention.unit}} (based on index name), for {{.Values.retention.pattern}}
-          prefixed indices. Ignore the error if the filter does not result in an
+          Delete indices older than the specified period of time and prefixed
+          with a pattern. Ignore the error if the filter does not result in an
           actionable list of indices (ignore_empty_list) and exit cleanly.
         options:
 {{ toYaml .Values.retention.options | indent 10 }}
