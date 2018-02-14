@@ -9,13 +9,11 @@ data:
     # not a Python "NoneType"
     actions:
       1:
-        action: delete_indices
+        action: {{.Values.action}}
         description: >-
-          Delete indices older than the specified period of time and prefixed
-          with a pattern. Ignore the error if the filter does not result in an
-          actionable list of indices (ignore_empty_list) and exit cleanly.
+{{ toYaml .Values.description | indent 10 }}
         options:
-{{ toYaml .Values.retention.options | indent 10 }}
+{{ toYaml .Values.options | indent 10 }}
         filters:
 {{ toYaml .Values.filters | indent 10 }}
 

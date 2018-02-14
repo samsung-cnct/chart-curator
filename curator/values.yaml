@@ -9,12 +9,18 @@ image:
    tag: latest
 schedule: "30 3 * * *"
 
-retention:
-  options:
-    timeout_override: null
-    disable_action: False
-    ignore_empty_list: True
-    continue_if_exception: null
+action: delete_indices
+
+description:
+  Delete indices older than 14 days and prefixed with logstash-.
+  Ignore the error if the filter does not result in an actionable
+  list of indices (ignore_empty_list) and exit cleanly.
+
+options:
+  timeout_override: null
+  disable_action: False
+  ignore_empty_list: True
+  continue_if_exception: null
 
 filters:
 - filtertype: pattern
