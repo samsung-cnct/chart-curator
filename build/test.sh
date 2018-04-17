@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 [[ -z "$CHART_NAME"   ]] && \
   {
@@ -12,4 +12,4 @@
     exit 1
   }
 
-helm lint ${CHART_NAME}
+helm lint "${CHART_NAME}"
