@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: curator-config
+data:
+  action_file.yml: |-
+    ---
+    # Remember, leave a key empty if there is no value.  None will be a string,
+    # not a Python "NoneType"
+    actions:
+      1:
+        action: {{.Values.action}}
+        description: >-
+{{ toYaml .Values.description | indent 10 }}
+        options:
+{{ toYaml .Values.options | indent 10 }}
+        filters:
+{{ toYaml .Values.filters | indent 10 }}
+
+  config.yml: |-
+    ---
+    # Remember, leave a key empty if there is no value.  None will be a string,
+    # not a Python "NoneType"
+    client:
+{{ toYaml .Values.client | indent 6 }}
+    logging:
+{{ toYaml .Values.logging | indent 6 }}
