@@ -5,7 +5,7 @@
 
 name: curator
 image:
-   name: quay.io/samsung_cnct/curator-container
+   name: quay.io/samsung_cnct/curator
    tag: latest
 schedule: "30 3 * * *"
 
