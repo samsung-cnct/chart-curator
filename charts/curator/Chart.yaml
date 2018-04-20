@@ -1,6 +1,6 @@
 ---
 name: curator
-version: 0.0.0
+version: 0.0.1
 description: Curator chart for managing elasticsearch indices
 keywords:
 - logging

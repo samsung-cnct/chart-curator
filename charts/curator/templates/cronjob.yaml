@@ -14,7 +14,7 @@ spec:
         spec:
           containers:
           - name: {{.Values.name}}
-            image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+            image: "{{ .Values.image.name }}"
             args: ["--config", "/etc/config/config.yml", "/etc/config/action_file.yml"]
             volumeMounts:
               - name: config-volume

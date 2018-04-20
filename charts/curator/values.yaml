@@ -5,8 +5,7 @@
 
 name: curator
 image:
-   name: quay.io/samsung_cnct/curator
-   tag: latest
+  name: quay.io/samsung_cnct/curator-container:latest
 schedule: "30 3 * * *"
 
 action: delete_indices
