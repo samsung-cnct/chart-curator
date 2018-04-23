@@ -1,0 +1,18 @@
+---
+type: chart
+rootfs:
+  - image: samsung_cnct/curator-container
+    context: curator
+    chart: curator
+    value: image
+configs:
+  - chart: curator
+    timeout: 600
+    retries: 1
+    release: curator
+    test:
+      values:
+    stage:
+      values:
+prod:
+  doDeploy: none
