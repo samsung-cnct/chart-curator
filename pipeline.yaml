@@ -1,7 +1,7 @@
 ---
 type: chart
 rootfs:
-  - image: samsung_cnct/chart-curator
+  - image: samsung_cnct/curator-container
     context: curator
     chart: curator
     value: image
