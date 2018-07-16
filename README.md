@@ -1,6 +1,6 @@
 # Chart for Curator
 
-[![pipeline status](https://git.cnct.io/common-tools/samsung-cnct_chart-curator/badges/master/pipeline.svg)](https://git.cnct.io/common-tools/samsung-cnct_chart-curator/commits/master)
+[![Build Status](https://jenkins.migrations.cnct.io/buildStatus/icon?job=pipeline-curator/master)](https://jenkins.migrations.cnct.io/job/pipeline-curator/job/master)
 
 Elasticsearch Curator helps you curate, or manage, your Elasticsearch indices by:
 * Obtaining the full list of indices from the cluster, as the *actionable list*
@@ -9,36 +9,13 @@ Elasticsearch Curator helps you curate, or manage, your Elasticsearch indices by
 Our Chart deletes all logstash-prefixed indices older than 14 days.
 
 ## Installation
-
-### Install via helm + registry
-Install Helm and the Helm registry plugin with [these][1] instructions.
-To install the latest stable version of this chart:
-
-```
-helm registry install quay.io/samsung_cnct/curator:stable
-```
-
-To install a specific release:
-
-```
-helm registry install quay.io/samsung_cnct/curator@0.0.1-38
-```
-
-To see available releases:
-
-```
-helm registry show quay.io/samsung_cnct/curator
-```
-
-To see available channels and the releases they point to:
-
-```
-helm registry channel quay.io/samsung_cnct/curator
-```
-
-### Install via helm
-
-To install from local:
+### From our chart repository
+``` 
+helm repo add cnct https://charts.migrations.cnct.io
+helm repo update
+helm install cnct/curator 
+```  
+### To install from local repository
 
 ```
 helm install --name my-release --namespace my-namespace ./curator
@@ -90,32 +67,6 @@ filters:
   epoch: null
   exclude: False
 ```
-
-### Install via Kraken
-
-Add the following to your [Kraken](https://github.com/samsung-cnct/kraken-lib) configuration template:
-
-```
-helmConfigs:
-  - &defaultHelm
-    name: defaultHelm
-    kind: helm
-    repos:
-      -
-        name: stable
-        url: https://kubernetes-charts.storage.googleapis.com
-    charts:
-      -
-        name: curator
-        repo: quay.io
-        chart: samsung_cnct/curator
-        channel: stable
-
-        # or you may you version instead of channel
-        # version: 0.0.1-0  or  visit https://quay.io/application/samsung_cnct/curator for most recent stable version
-```
-
-Get [Kraken](https://github.com/samsung-cnct/kraken) to help you deploy a Kubernetes cluster.
 
 ## Configuration
 
