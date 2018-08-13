@@ -46,7 +46,7 @@ client:
   client_cert: null
   client_key: null
   ssl_no_validate: False
-  http_auth: null
+  http_auth: "elastic:changeme" #elasicsearch x-pack: "username:password"
   timeout: 30
   master_only: False
 
