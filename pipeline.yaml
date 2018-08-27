@@ -2,6 +2,7 @@
 type: chart
 rootfs:
   - image: samsung_cnct/curator-container
+    dockerContext: rootfs/curator
     context: curator
     chart: curator
     value: image
