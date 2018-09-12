@@ -35,7 +35,7 @@ logstashFilters:
   timestring: '%Y.%m.%d'
   direction: older
   unit: days
-  unit_count: 3
+  unit_count: 14
   field: null
   stats_result: null
   epoch: null
@@ -51,7 +51,7 @@ logsystemdFilters:
   timestring: '%Y.%m.%d'
   direction: older
   unit: days
-  unit_count: 3
+  unit_count: 14
   field: null
   stats_result: null
   epoch: null
