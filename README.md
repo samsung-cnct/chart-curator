@@ -6,7 +6,7 @@ Elasticsearch Curator helps you curate, or manage, your Elasticsearch indices by
 * Obtaining the full list of indices from the cluster, as the *actionable list*
 * Iterating through a list of user-defined [filters][5] to progressively remove indices from the *actionable* list as needed.
 
-Our Chart deletes all logstash-prefixed indices older than 14 days.
+Our Chart deletes all indices prefixed with either `logstash-` or `logsystemd` older than 14 days.
 
 ## Installation
 ### From our chart repository
@@ -75,15 +75,16 @@ The following tables lists the configurable parameters of the Curator chart and 
 | Parameter                | Description                                     | Default                                 |
 | ------------------------ | ----------------------------------------------- | --------------------------------------- |
 | `name`                   | Name of the chart                               | `curator`                               |
-| `image.name`             | FQDN repository/image name                      | `quay.io/samsung_cnct/curator-container`|
-| `image.tag`              | Image tag                                       | `latest`                                |
+| `image`                  | FQDN repository/image name                      | `quay.io/samsung_cnct/curator-container`|
 | `schedule`               | The cron schedule                               | `30 3 * * *`                            |
 | `action`                 | Name of the action                              | `delete_indices`                        |
-| `description`            | Description of the action                       | `<see values.yaml>`                     |
+| `logstashDescription`    | Description of the logstash action              | `<see values.yaml>`                     |
+| `logsystemdDescription`  | Description of the logsystemd action            | `<see values.yaml>`                     |
 | `options`                | [Options][6] of the action                      | `<see values.yaml>`                     |
-| `filters`                | [Filters][5] of the action                      | `<see values.yaml>`                     |
+| `logstashFilters`        | [Filters][5] for logstash action                | `<see values.yaml>`                     |
+| `logsystemdFilters`      | [Filters][5] for logsystemd action              | `<see values.yaml>`                     |
 | `client`                 | [Client configuration][7]                       | `<see values.yaml>`                     |
-| `logging`                | [Loging configuration][7]                       | `<see values.yaml>`                     |
+| `logging`                | [Logging configuration][7]                      | `<see values.yaml>`                     |
 
 ## Contributing
 
