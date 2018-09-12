@@ -11,11 +11,24 @@ data:
       1:
         action: {{.Values.action}}
         description: >-
-{{ toYaml .Values.description | indent 10 }}
+          Delete indices older than 14 (default) days and prefixed with logstash-.
+          Ignore the error if the filter does not result in an actionable
+          list of indices (ignore_empty_list) and exit cleanly.
         options:
 {{ toYaml .Values.options | indent 10 }}
         filters:
-{{ toYaml .Values.filters | indent 10 }}
+{{ toYaml .Values.logstashFilters | indent 10 }}
+      2:
+        action: {{.Values.action}}
+        description: >-
+          Delete indices older than 14 (default) days and prefixed with logsystemd-.
+          Ignore the error if the filter does not result in an actionable
+          list of indices (ignore_empty_list) and exit cleanly.
+        options:
+{{ toYaml .Values.options | indent 10 }}
+        filters:
+{{ toYaml .Values.logsystemdFilters | indent 10 }}
+
 
   config.yml: |-
     ---

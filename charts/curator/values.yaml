@@ -5,7 +5,7 @@
 
 name: curator
 image: quay.io/samsung_cnct/curator-container:prod
-schedule: "30 3 * * *"
+schedule: "5 * * * *"
 
 action: delete_indices
 
@@ -13,6 +13,11 @@ description:
   Delete indices older than 14 days and prefixed with logstash-.
   Ignore the error if the filter does not result in an actionable
   list of indices (ignore_empty_list) and exit cleanly.
+# 
+# logsystemdDescription:
+#   Delete indices older than {{.Values.logsystemdFilters[1].unit_count}} days and prefixed with logsystemd-.
+#   Ignore the error if the filter does not result in an actionable
+#   list of indices (ignore_empty_list) and exit cleanly.
 
 options:
   timeout_override: null
@@ -20,7 +25,7 @@ options:
   ignore_empty_list: True
   continue_if_exception: null
 
-filters:
+logstashFilters:
 - filtertype: pattern
   kind: prefix
   value: "logstash-"
@@ -30,7 +35,23 @@ filters:
   timestring: '%Y.%m.%d'
   direction: older
   unit: days
-  unit_count: 14
+  unit_count: 3
+  field: null
+  stats_result: null
+  epoch: null
+  exclude: False
+  
+logsystemdFilters:
+- filtertype: pattern
+  kind: prefix
+  value: "logsystemd-"
+  exclude: False
+- filtertype: age
+  source: name
+  timestring: '%Y.%m.%d'
+  direction: older
+  unit: days
+  unit_count: 3
   field: null
   stats_result: null
   epoch: null
@@ -46,7 +67,7 @@ client:
   client_cert: null
   client_key: null
   ssl_no_validate: False
-  http_auth: "elastic:changeme" #elasicsearch x-pack: "username:password"
+  http_auth: "elastic:changeme" #elasticsearch x-pack: "username:password"
   timeout: 30
   master_only: False
 
