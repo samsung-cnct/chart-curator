@@ -5,19 +5,19 @@
 
 name: curator
 image: quay.io/samsung_cnct/curator-container:prod
-schedule: "5 * * * *"
+schedule: "30 3 * * *"
 
 action: delete_indices
 
-description:
-  Delete indices older than 14 days and prefixed with logstash-.
+logstashDescription:
+  Delete indices older than 14 (default) days and prefixed with logstash-.
   Ignore the error if the filter does not result in an actionable
   list of indices (ignore_empty_list) and exit cleanly.
-# 
-# logsystemdDescription:
-#   Delete indices older than {{.Values.logsystemdFilters[1].unit_count}} days and prefixed with logsystemd-.
-#   Ignore the error if the filter does not result in an actionable
-#   list of indices (ignore_empty_list) and exit cleanly.
+
+logsystemdDescription:
+  Delete indices older than 14 (default) days and prefixed with logsystemd-.
+  Ignore the error if the filter does not result in an actionable
+  list of indices (ignore_empty_list) and exit cleanly.
 
 options:
   timeout_override: null
