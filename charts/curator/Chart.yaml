@@ -1,12 +1,11 @@
 ---
 name: curator
-version: 0.0.7
+version: 0.0.8
 description: Curator chart for managing elasticsearch indices
 keywords:
 - logging
 - curator
 - elasticsearch
-- kraken
 - delete_indices
 home: https://github.com/samsung-cnct/chart-curator
 sources:

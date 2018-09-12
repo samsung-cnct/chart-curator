@@ -9,8 +9,13 @@ schedule: "30 3 * * *"
 
 action: delete_indices
 
-description:
-  Delete indices older than 14 days and prefixed with logstash-.
+logstashDescription:
+  Delete indices older than 14 (default) days and prefixed with logstash-.
+  Ignore the error if the filter does not result in an actionable
+  list of indices (ignore_empty_list) and exit cleanly.
+
+logsystemdDescription:
+  Delete indices older than 14 (default) days and prefixed with logsystemd-.
   Ignore the error if the filter does not result in an actionable
   list of indices (ignore_empty_list) and exit cleanly.
 
@@ -20,10 +25,26 @@ options:
   ignore_empty_list: True
   continue_if_exception: null
 
-filters:
+logstashFilters:
 - filtertype: pattern
   kind: prefix
   value: "logstash-"
+  exclude: False
+- filtertype: age
+  source: name
+  timestring: '%Y.%m.%d'
+  direction: older
+  unit: days
+  unit_count: 14
+  field: null
+  stats_result: null
+  epoch: null
+  exclude: False
+  
+logsystemdFilters:
+- filtertype: pattern
+  kind: prefix
+  value: "logsystemd-"
   exclude: False
 - filtertype: age
   source: name
@@ -46,7 +67,7 @@ client:
   client_cert: null
   client_key: null
   ssl_no_validate: False
-  http_auth: "elastic:changeme" #elasicsearch x-pack: "username:password"
+  http_auth: "elastic:changeme" #elasticsearch x-pack: "username:password"
   timeout: 30
   master_only: False
 
