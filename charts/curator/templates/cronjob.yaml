@@ -12,6 +12,17 @@ spec:
           - name: {{.Values.name}}
             image: "{{ .Values.image }}"
             args: ["--config", "/etc/config/config.yml", "/etc/config/action_file.yml"]
+            env:
+            - name: ES_USER
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: {{ template "fullname" . }}-auth
+            - name: ES_PW
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: {{ template "fullname" . }}-auth
             volumeMounts:
               - name: config-volume
                 mountPath: /etc/config
