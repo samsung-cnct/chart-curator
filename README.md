@@ -13,12 +13,12 @@ Our Chart deletes all indices prefixed with either `logstash-` or `logsystemd` o
 ``` 
 helm repo add cnct https://charts.migrations.cnct.io
 helm repo update
-helm install cnct/curator 
+helm install cnct/curator --set security.password="changeme"
 ```  
 ### To install from local repository
 
 ```
-helm install --name my-release --namespace my-namespace ./curator
+helm install --name my-release --namespace my-namespace ./curator --set security.password="changeme"
 ```
 
 To install from local, overriding the base image and tag directly:
@@ -27,7 +27,7 @@ To install from local, overriding the base image and tag directly:
 helm install --name my-release --namespace my-namespace \
   --set image.name=bobrik/curator \
   --set image.tag=5.2.0 \
-  ./curator
+  ./curator --set security.password="changeme"
 ```
 
 To install from local, overriding with a values file:
@@ -35,7 +35,7 @@ To install from local, overriding with a values file:
 ```
 helm install --name my-release --namespace my-namespace \
   --values ./staging-values.yaml \
-  ./curator
+  ./curator --set security.password="changeme"
 ```
 
 In which the file `./staging-values.yaml` contains:
@@ -85,6 +85,7 @@ The following tables lists the configurable parameters of the Curator chart and 
 | `logsystemdFilters`      | [Filters][5] for logsystemd action              | `<see values.yaml>`                     |
 | `client`                 | [Client configuration][7]                       | `<see values.yaml>`                     |
 | `logging`                | [Logging configuration][7]                      | `<see values.yaml>`                     |
+| `security.password`      | [Logging configuration][7]                      | `<see values.yaml>`                     |
 
 ## Contributing
 
