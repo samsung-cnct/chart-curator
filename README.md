@@ -1,6 +1,6 @@
 # Chart for Curator
 
-[![Build Status](https://jenkins.migrations.cnct.io/buildStatus/icon?job=pipeline-curator/master)](https://jenkins.migrations.cnct.io/job/pipeline-curator/job/master)
+[![Build Status](https://jenkins.cnct.io/buildStatus/icon?job=pipeline-curator/master)](https://jenkins.cnct.io/job/pipeline-curator/job/master)
 
 Elasticsearch Curator helps you curate, or manage, your Elasticsearch indices by:
 * Obtaining the full list of indices from the cluster, as the *actionable list*
@@ -11,7 +11,7 @@ Our Chart deletes all indices prefixed with either `logstash-` or `logsystemd` o
 ## Installation
 ### From our chart repository
 ``` 
-helm repo add cnct https://charts.migrations.cnct.io
+helm repo add cnct https://charts.cnct.io
 helm repo update
 helm install cnct/curator --set security.password="changeme"
 ```  
